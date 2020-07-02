@@ -20,7 +20,7 @@ public class LoadAll {
 		
 		System.out.println("Loaded in data");
 		
-		Name anagram = new Name("emmasmith");
+		Name anagram = new Name("christianthanasoulis");
 		
 		HashMap<String,Integer> tmpCharCount = new HashMap<String,Integer>();
 		int index = 0;
@@ -32,13 +32,13 @@ public class LoadAll {
 			for(Name ln: lastNames.getNames()) {
 				tmpCharCount = anagram.subtract(fn.getCharCount());
 				if(tmpCharCount != null && tmpCharCount.equals(ln.getCharCount())) {
-					System.out.println(fn.getName() + ln.getName());
+					System.out.println(fn.getName() +" "+ ln.getName());
 				}
 			}
 			index ++;
 			
-			if(index%9000 == 0) {
-				System.out.println("Checked "+ (double) (index/len)*100 + "% of first names");
+			if(index%(len/10) == 0) {
+				System.out.println("Checked "+ ((double)index/len)*100 + "% of first names");
 			}
 		}
 		System.out.println("end");
